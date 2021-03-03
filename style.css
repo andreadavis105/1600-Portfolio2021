@@ -9,6 +9,10 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Heebo", sans-serif;
+}
+
 h1 {
     color: aquamarine;
 }
@@ -99,5 +103,27 @@ figure {
 
 #contact-links {
     text-align: center;
+    margin-bottom: 20px;
+    /*color: pink; */
+}
+
+#profile-link {
     color: white;
+    padding: 0px 10px 30px 10px;
+}
+
+@media (max-width: 480px) {
+    #profile-link {
+      display: flex;
+      flex-direction: column;
+    }
+}
+#footer-separation {
+    background-color: antiquewhite;
+    height: 1vh;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0px 30px 0px;
 }
