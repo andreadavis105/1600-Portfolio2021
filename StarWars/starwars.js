@@ -10,7 +10,7 @@ console.log(films[0].title) */
 
 let movietitle = document.querySelector(".movieTitle")
 
-for (var i = 0; i < films.length; i++) {
+for (let i = 0; i < films.length; i++) {
     let title = films[i].title
     let newTitle = document.createElement("li")
     newTitle.textContent = title
