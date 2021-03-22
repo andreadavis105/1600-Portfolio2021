@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.movieList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 1em;
+}
+
+figcaption {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
