@@ -21,6 +21,7 @@ const otherCharacters = people.filter(person => {
     }
 })
 function populateDom(characters) {
+    removeChildren(mainContent)
     characters.forEach(person => {
     const charFigure = document.createElement("figure")
     const charImg = document.createElement("img")
@@ -42,4 +43,10 @@ function getLastNum(url) {
         start ++
     }
     return url.slice (start, end)
+}
+
+function removeChildren(container) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
 }

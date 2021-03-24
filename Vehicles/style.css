@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Mulish', sans-serif;
+}
+
+h1 {
+    margin: 20px 0px 40px 0px;
+    text-align: center;
+    color: white;
+}
+img {
+    height: 200px;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+figcaption {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: gray;
+    margin-top: -4px;
+    padding: 10px;
+    color: white;
+}
