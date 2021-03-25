@@ -31,3 +31,7 @@ figcaption {
     padding: 10px;
     color: white;
 }
+
+img, figcaption {
+    box-shadow: 3px 3px black;
+}
