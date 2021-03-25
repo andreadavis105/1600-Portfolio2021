@@ -1,4 +1,5 @@
 import { films } from '../data/films.js'
+import { getLastNum} from '../UtilityFunctions/index.js'
 
 /* let movieOne = document.querySelector("#movie1")
 let movieTwo = document.querySelector("#movie2")
