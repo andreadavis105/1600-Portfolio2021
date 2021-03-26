@@ -26,6 +26,7 @@ function displayPhoto(property) {
     let image = document.createElement("img")
     let imageNum = getLastNum(property.url)
     image.src = `https://starwars-visualguide.com/assets/img/planets/${imageNum}.jpg`
+    
     //fix the broken images icon from displaying
     image.addEventListener("error", () => {
         image.hidden = true
