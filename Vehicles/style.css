@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: black;
+    background-image: url("../Images/tri-cao-2MNAkU-UKYQ-unsplash.jpg");
     font-family: 'Mulish', sans-serif;
 }
 
@@ -21,11 +21,13 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 figcaption {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background-color: gray;
     margin-top: -4px;
     padding: 10px;
@@ -35,3 +37,12 @@ figcaption {
 img, figcaption {
     box-shadow: 3px 3px black;
 }
+
+div {
+    background-color: black;
+    height: 200px;
+}
+
+/* figure {
+    margin: 20px;
+} */

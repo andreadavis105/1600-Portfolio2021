@@ -58,7 +58,7 @@ ul {
 /* Projects Section */
 
 #projects {
-    background-color: yellowgreen;
+    background-color: grey;
 }
 
 #projects-header {
@@ -83,6 +83,7 @@ figure {
 
 .cap {
     background-color: teal;
+    color: honeydew;
     text-align: center;
     display: flex;
     flex-direction: column;

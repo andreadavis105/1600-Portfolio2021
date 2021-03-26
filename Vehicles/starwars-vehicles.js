@@ -4,7 +4,7 @@ const mainContent = document.querySelector("main")
 
 vehicles.forEach(speeder => {
     const carFigure = document.createElement("figure")
-    const carImg = document.createElement("img")
+    const carImg = document.createElement("img", "div")
     let picNum = getPicNum(speeder.url)
     carImg.src = `https://starwars-visualguide.com/assets/img/vehicles/${picNum}.jpg`
     const carCaption = document.createElement("figcaption")
@@ -14,6 +14,9 @@ vehicles.forEach(speeder => {
     carFigure.appendChild(carCaption)
 
     mainContent.appendChild(carFigure)
+    carImg.addEventListener("error", () => {
+        carImg.hidden = true
+    })
     
 })
 
