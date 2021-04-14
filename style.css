@@ -23,7 +23,7 @@ a {
 }
 
 #navbar {
-    background-color: slategray;
+    background-color: #9aab89;
     position: fixed;
     top: 0;
     width: 100%;
@@ -49,7 +49,7 @@ ul {
 }
 
 #welcome-section {
-    background-color: rgb(124, 53, 64);
+    background-color: #915f6d;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ ul {
 /* Projects Section */
 
 #projects {
-    background-color: grey;
+    background-color: #ffd6bf;
 }
 
 #projects-header {
