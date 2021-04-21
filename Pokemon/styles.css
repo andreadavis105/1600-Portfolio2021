@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pokemonGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.page {
+    width: 200px;
+    height: 250px;
+    margin-bottom: 20px;
+    perspective: 900px;
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    border: 1px solid red;
+    margin: 10px 0px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.cardSide {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    backface-visibility: hidden;
+}
+
+.card.flipped-back {
+    transform: rotateY(180deg);
+}
+
+.cardSideFront {
+    background: purple;
+    height: 100%;
+    width: 100%;
+}
+
+.cardSideBack {
+    background: yellow;
+    height: 100%;
+    width: 100%;
+    transform: rotateY(180deg);
+}
