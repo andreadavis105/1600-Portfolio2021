@@ -4,24 +4,41 @@
     box-sizing: border-box;
 }
 
+.header {
+    background-color:navy;
+    color:oldlace;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 10px;
+}
+
+.pokemonButton {
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 45px;
+}
+
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
+    /* justify-content: space-around; */
+    margin: 30px;
 }
 
 .page {
-    width: 200px;
-    height: 250px;
-    margin-bottom: 20px;
+    width: 220px;
+    height: 300px;
+    /* margin-bottom: 20px; */
+    margin: 20px;
     perspective: 900px;
+    /* border: 1px solid indigo; */
 }
 
 .card {
-    width: 200px;
-    height: 250px;
-    border: 1px solid red;
+    width: 220px;
+    height: 300px;
+    border: 7px solid yellow;
+    border-radius: 5%;
     margin: 10px 0px;
     transition: transform 1s;
     transform-style: preserve-3d;
@@ -41,7 +58,7 @@
 }
 
 .cardSideFront {
-    background: purple;
+    background: gray;
     height: 100%;
     width: 100%;
 }
@@ -51,4 +68,29 @@
     height: 100%;
     width: 100%;
     transform: rotateY(180deg);
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    padding: 10px 10px 5px 10px;
+    /* border: 2px solid palevioletred; */
+}
+
+p {
+    color: black;
+    /* border: 2px solid indigo; */
+    font-size: 22px;
+}
+
+.addNew {
+    margin: 40px;
+    padding: 20px;
+    background-color: yellow;
+    box-shadow: 2px 2px #999;
+    border: none;
+}
+
+.button {
+    text-align: center;
 }

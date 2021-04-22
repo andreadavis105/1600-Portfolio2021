@@ -1,16 +1,44 @@
 const pokemonGrid = document.querySelector('.pokemonGrid')
 const pokemonButton = document.querySelector('.pokemonButton')
 const addNewButton = document.querySelector('.addNew')
+const createPokemon = document.querySelector('.createPokemon')
 
 pokemonButton.addEventListener('click', () => {
     loadPage()
 })
 
 addNewButton.addEventListener('click', () => {
-    let pokemonId = prompt("Enter Pokemons name or ID#:")
+    let pokemonId = prompt("Enter Pokemons name or ID#:").toLowerCase()
     getPokemonData(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then(
         data => displayCard(data)
     ).catch(error => console.log(error))
+})
+
+
+class Pokemon {
+    constructor(name, height, weight, moves, abilities) {
+        this.name = name
+        this.height = height
+        this.weight = weight
+        this.moves = moves
+        this.abilities = abilities
+    }
+}
+
+createPokemon.addEventListener("click", () => {
+    let pokemonName = prompt("Enter the name of your new Pokemon:")
+    let pokemonHeight = prompt("Enter the height:")
+    let pokemonWeight = prompt("Enter the weight:")
+    let pokemonMove = prompt("Enter 1 move:")
+    let pokemonMoveTwo = prompt("Enter another move: (only accepts two moves")
+    let pokemonAbil = prompt("Enter ability:")
+    let pokemonAbilTwo = prompt("Enter another ability:")
+    let newPokemon = new Pokemon(pokemonName,
+        pokemonHeight,
+        pokemonWeight,
+        [pokemonMove, pokemonMoveTwo],
+        [pokemonAbil, pokemonAbilTwo])
+    displayCard(newPokemon)
 })
 
 async function getPokemonData(url) {
@@ -58,7 +86,7 @@ function displayFront(pokemon) {
     let frontText = document.createElement('p')
     frontText.textContent = pokemon.name
     let frontPic = document.createElement('img')
-    frontPic.src = 'images/${getAllImages(pokemon)}.png`
+    frontPic.src = getAllImages(pokemon)
     front.appendChild(frontPic)
     front.appendChild(frontText)
     return front
@@ -67,9 +95,20 @@ function displayFront(pokemon) {
 function displayBack(pokemon) {
     let back = document.createElement('div')
     back.className = 'cardSide cardSideBack'
-    let backText = document.createElement('p')
-    backText.textContent = 'Back of card' //change text eventually
-    back.appendChild(backText)
+    let backTextOne = document.createElement('p')
+    backTextOne.textContent = `ID: ${pokemon.id}`
+    let backTextTwo = document.createElement('p')
+    backTextTwo.textContent = `weight: ${pokemon.weight}`
+    let backTextThree = document.createElement('p')
+    backTextThree.textContent = `height: ${pokemon.height}`
+    
+    // backTextThree.textContent = `abilities: ${pokemon.abilities
+    //     .map((ability) => ability.ability.name)
+    //     .join("; ")}`
+    
+    back.appendChild(backTextOne)
+    back.appendChild(backTextTwo)
+    back.appendChild(backTextThree)
     return back
 }
 
@@ -92,3 +131,5 @@ function getAllImages(pokemon) {
 
     return `https:raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemonId}.png`
 }
+
+// add 3 thing to card and make the card collection only populate once for one click so it doesn't keep populating page with pokemon
