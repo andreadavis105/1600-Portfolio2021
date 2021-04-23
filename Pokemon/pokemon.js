@@ -11,7 +11,7 @@ let limit = 25
 pokemonButton.addEventListener('click', () => {
     loadPage(offset, limit)
     offset += limit
-    pokemonButton.textContent = `load the next ${limit} Pokemon`
+    pokemonButton.textContent = `Load the Next ${limit} Pokemon`
 })
 
 addNewButton.addEventListener('click', () => {
