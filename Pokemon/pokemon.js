@@ -226,7 +226,7 @@ function getAllImages(pokemon) {
     if(pokemon.id > 9 && pokemon.id < 100) pokemonId = `0${pokemon.id}`
     if(pokemon.id > 99 && pokemon.id < 898) pokemonId = `${pokemon.id}`
 
-    return `https:raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemonId}.png`
+    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemonId}.png`
 }
 
 // add 3 thing to card and make the card collection only populate once for one click so it doesn't keep populating page with pokemon
