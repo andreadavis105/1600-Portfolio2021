@@ -31,7 +31,7 @@ function displayPhoto(property) {
     /* image.addEventListener("error", () => {
         image.hidden = true
     }) */
-    image.addEventListener("error", ()=> image.src = 'Images/imageUnavailable_600x400.jpg')
+    image.addEventListener("error", ()=> image.src = 'Images/planetsUnavail_caps.png')
     planetPhotos.appendChild(image)
 }
 
