@@ -28,9 +28,10 @@ function displayPhoto(property) {
     image.src = `https://starwars-visualguide.com/assets/img/planets/${imageNum}.jpg`
     
     //fix the broken images icon from displaying
-    image.addEventListener("error", () => {
+    /* image.addEventListener("error", () => {
         image.hidden = true
-    })
+    }) */
+    image.addEventListener("error", ()=> image.src = 'Images/imageUnavailable_600x400.jpg')
     planetPhotos.appendChild(image)
 }
 

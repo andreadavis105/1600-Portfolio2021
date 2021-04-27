@@ -14,10 +14,10 @@ vehicles.forEach(speeder => {
     carFigure.appendChild(carCaption)
 
     mainContent.appendChild(carFigure)
-    carImg.addEventListener("error", () => {
+    /* carImg.addEventListener("error", () => {
         carImg.hidden = true
-    })
-    
+    }) */
+    carImg.addEventListener('error', () => carImg.src = 'Images/imageUnavailable_300x200.jpg')
 })
 
 function getPicNum(url) {

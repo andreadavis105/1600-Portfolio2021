@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.membersGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figElement {
+    margin: 20px;
+}
+
+figure {
+    width: 100px;
+}
+
+figcaption {
+    text-align: center;
+}
