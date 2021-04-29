@@ -4,10 +4,43 @@ import { removeChildren } from '../UtilityFunctions/index.js'
 
 
 const congressGrid = document.querySelector('.membersGrid')
-const seniority = document.querySelector('.seniority')
-const birthday = document.querySelector('.birthday')
+const senioritySen = document.querySelector('.senioritySen')
+const seniorityRep = document.querySelector('.seniorityRep')
 
-seniority.addEventListener('click', () => senioritysortby())
+const repubButtonSen = document.querySelector('.republicansSen')
+const democButtonSen = document.querySelector('.democratsSen')
+const othersButtonSen = document.querySelector('.othersSen')
+
+const repubButtonRep = document.querySelector('.republicansRep')
+const democButtonRep = document.querySelector('.democratsRep')
+
+
+
+repubButtonSen.addEventListener('click', () => {
+    displayMembers(getMembersByParty(senators, 'R'))
+})
+
+democButtonSen.addEventListener('click', () => {
+    displayMembers(getMembersByParty(senators, 'D'))
+})
+
+othersButtonSen.addEventListener('click', () => {
+    displayMembers(getMembersByParty(senators, "ID"))
+})
+
+
+senioritySen.addEventListener('click', () => senioritysortbySen())
+
+seniorityRep.addEventListener('click', () => senioritysortbyReps())
+
+
+repubButtonRep.addEventListener('click', () => {
+    displayMembers(getMembersByParty(representatives, 'R'))
+})
+
+democButtonRep.addEventListener('click', () => {
+    displayMembers(getMembersByParty(representatives, 'D'))
+})
 
 function displayMembers(simpleList) {
     removeChildren(congressGrid)
@@ -17,6 +50,10 @@ function displayMembers(simpleList) {
         let personFigure = document.createElement('figure')
         let figureImg = document.createElement('img')
         let figureCap = document.createElement('figcaption')
+        
+        if (person.party === 'R') personDiv.className = 'repub'
+        if (person.party === 'D') personDiv.className = 'democ'
+        if (person.party === 'ID') personDiv.className = 'other'
 
         figureImg.src = person.imgURL
         figureCap.textContent = person.name
@@ -34,21 +71,32 @@ function getImpInfo(peopleList) {
         let middleName = person.middle_name ? `${person.middle_name}` : ``
         return {
             id: person.id,
-            name: `${person.first_name}${middleName} ${person.last_name}`,
+            name: `${person.first_name} ${middleName} ${person.last_name}`,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
-            seniority: person.seniority  //convert string to int. I don't need to do this but incase I do it would be      seniority: parseInt(person.seniority, 10)     10 is for the base 10 number system
+            seniority: person.seniority,  //convert string to int. I don't need to do this but incase I do it would be      seniority: parseInt(person.seniority, 10)     10 is for the base 10 number system
+            party: person.party
         }
     })
 }
 
-function senioritysortby() {
+function senioritysortbySen() {
     displayMembers(getImpInfo(senators).sort((a, b) => {
         return a.seniority -b.seniority
     }))
 }
 
-displayMembers(getImpInfo(senators))
+function senioritysortbyReps() {
+    displayMembers(getImpInfo(representatives).sort((a, b) => {
+        return a.seniority -b.seniority
+    }))
+}
 
+// displayMembers(getImpInfo(senators))
+
+
+const getMembersByParty = (group, partyAff) => {
+    return getImpInfo(group).filter(peep => peep.party === partyAff)
+}
 
 
 
