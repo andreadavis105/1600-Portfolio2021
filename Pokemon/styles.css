@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(Images/grass_crop.jpg);
+    background-repeat: repeat;
+}
+
 .header {
     text-align: center;
     padding: 70px 0px;
@@ -101,15 +106,15 @@ p {
     font-family: 'Acme', sans-serif;
 }
 
-.addNew {
+/* .addNew {
     margin: 0px;
     padding: 20px;
-    /* background-color: yellow; */
+    background-color: yellow;
     box-shadow: 2px 2px #999;
     border: none;
-}
+} */
 
-.button {
+/* .button {
     text-align: center;
     padding: 15px;
     border-radius: 10px;
@@ -120,4 +125,16 @@ p {
     color: rgb(24, 33, 86);
     box-shadow: 2px 2px #dad8d8;
     border: 2.5px solid yellow;
-}
+} */
+
+.button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+    /* filter: drop-shadow(1px 1px 1px gray); */
+    /* box-shadow: 1px 1px 1px gray; */
+    background-image: url(Images/pokeball.jpg);
+    color: rgb(24, 33, 86);
+    
+  }
