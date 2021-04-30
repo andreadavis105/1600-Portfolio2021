@@ -3,10 +3,32 @@
     box-sizing: border-box;
 }
 
+header {
+    height: 250px;
+    width: 100%;
+    background-image: url(Images/AmericanFlag_good.jpg);
+    margin-bottom: 15px;
+}
+
+header h1 {
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(222, 222, 228);
+}
+
+.sen-sub {
+    color: white;
+}
+
+.sub-header {
+    display: flex;
+    justify-content: space-around;
+}
+
 .membersGrid {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid green;
 }
 
 .figElement {
@@ -43,12 +65,53 @@ figcaption {
     margin: 10px;
 }
 
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 .senior {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
 }
 
-.senButtons, .repButtons {
-    display: flex;
-    justify-content: center;
+.senior .seniorityRep {
+    margin-left: -60px;
+    color: rgb(14, 14, 78);
 }
+
+.senior .senioritySen {
+    margin-left: -45px;
+    color: rgb(14, 14, 78);
+}
+
+.senButtons {
+    margin-top: 20px;
+}
+
+.senButtons .republicansSen {
+    margin: 0px 10px 10px 185px;
+    color: red;
+}
+
+.senButtons .democratsSen {
+    color: blue;
+}
+
+.senButtons .othersSen {
+    margin: 0px 0px 10px 10px;
+    color: purple;
+}
+
+.senButtons .republicansRep {
+    margin: 0px 10px 10px 445px;
+    color: red;
+}
+
+.senButtons .democratsRep {
+    color: blue;
+}
+

@@ -11,7 +11,7 @@ let limit = 25
 pokemonButton.addEventListener('click', () => {
     loadPage(offset, limit)
     offset += limit
-    pokemonButton.textContent = `Load the Next ${limit} Pokemon`
+    pokemonButton.textContent = `View More Pokemon`
 })
 
 addNewButton.addEventListener('click', () => {
@@ -23,7 +23,8 @@ addNewButton.addEventListener('click', () => {
 
 
 class Pokemon {
-    constructor(name, height, weight, abilities) {
+    constructor(id, name, height, weight, abilities) {
+        this.id = id
         this.name = name
         this.height = height
         this.weight = weight
@@ -108,7 +109,7 @@ function displayCard(singlePokemon) {
 }
 
 
-function displayFront(pokemon) {
+/* function displayFront(pokemon) {
     let front = document.createElement('div')
     front.className = 'cardSide cardSideFront'
     let frontText = document.createElement('p')
@@ -123,12 +124,67 @@ function displayFront(pokemon) {
     front.appendChild(frontPic)
     front.appendChild(frontText)
 
-    //moving back text to front
-    /* let frontStats = document.createElement('div')
-    // frontStats.className = 'cardSide cardSideFront' */
+
     let frontStatsId = document.createElement('p')
 
     frontStatsId.textContent = `ID: ${pokemon.id}`
+    let frontStatsWeight = document.createElement('p')
+    frontStatsWeight.textContent = `Weight: ${pokemon.weight}`
+    let frontStatsHeight = document.createElement('p')
+    frontStatsHeight.textContent = `Height: ${pokemon.height}`
+
+    let textAbil = document.createElement('p')
+    textAbil.textContent = "Abilities:"
+    textAbil.className = 'abilities' */
+
+    /* let textAbil = document.createElement('p')
+    textAbil.textContent = `abilities: ${pokemon.abilities
+         .map((ability) => ability.ability.name)
+         .join("; ")}` */
+
+/*     front.appendChild(frontStatsId)
+    front.appendChild(frontStatsWeight)
+    front.appendChild(frontStatsHeight)
+    front.appendChild(textAbil)
+
+    pokemon.abilities.forEach((pokemonAbility) => {
+        console.log(pokemonAbility)
+        let frontStatsAbil = document.createElement('p')
+        frontStatsAbil.textContent = pokemonAbility.ability.name
+        front.appendChild(frontStatsAbil)
+    })
+
+    return front
+}
+ */
+
+
+function displayFront(pokemon) {
+    let front = document.createElement('div')
+    front.className = 'cardSide cardSideFront'
+    let topDiv = document.createElement('div')
+    topDiv.className = 'topInfo'
+    let frontText = document.createElement('p')
+    frontText.className = 'name'
+    frontText.textContent = pokemon.name
+    let frontStatsId = document.createElement('h4')
+    frontStatsId.className = 'id'
+    frontStatsId.textContent = `ID: ${pokemon.id}`
+    let frontPic = document.createElement('img')
+    frontPic.className = 'frontImg'
+    frontPic.src = getAllImages(pokemon)
+
+    topDiv.appendChild(frontText)
+    topDiv.appendChild(frontStatsId)
+    front.appendChild(topDiv)
+
+    /* front.appendChild(frontText)
+    front.appendChild(frontStatsId) */
+    front.appendChild(frontPic)
+
+    frontPic.addEventListener('error', () => frontPic.src = 'Images/pokemonCardBack.png')
+
+
     let frontStatsWeight = document.createElement('p')
     frontStatsWeight.textContent = `Weight: ${pokemon.weight}`
     let frontStatsHeight = document.createElement('p')
@@ -143,7 +199,6 @@ function displayFront(pokemon) {
          .map((ability) => ability.ability.name)
          .join("; ")}` */
 
-    front.appendChild(frontStatsId)
     front.appendChild(frontStatsWeight)
     front.appendChild(frontStatsHeight)
     front.appendChild(textAbil)
@@ -155,15 +210,9 @@ function displayFront(pokemon) {
         front.appendChild(frontStatsAbil)
     })
 
-   /*  pokemon.abilities.forEach((pokemonAbility) => {
-        console.log(pokemonAbility)
-        let frontStatsAbil = document.createElement('p')
-        frontStatsAbil.textContent = pokemonAbility.ability.name
-        front.appendChild(frontStatsAbil)
-    }) */
-
     return front
 }
+
 
  function displayBack(pokemon) {
     let back = document.createElement('div')
@@ -224,8 +273,8 @@ function getAllImages(pokemon) {
     let pokemonId
     if(pokemon.id < 10) pokemonId = `00${pokemon.id}`
     if(pokemon.id > 9 && pokemon.id < 100) pokemonId = `0${pokemon.id}`
-    if(pokemon.id > 99 && pokemon.id < 898) pokemonId = `${pokemon.id}`
-
+    if(pokemon.id > 99 && pokemon.id < 898) pokemonId = pokemon.id
+    if(pokemon.id === 899) {return 'Images/CreateNew.png'} 
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemonId}.png`
 }
 

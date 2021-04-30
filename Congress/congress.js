@@ -73,7 +73,7 @@ function getImpInfo(peopleList) {
             id: person.id,
             name: `${person.first_name} ${middleName} ${person.last_name}`,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
-            seniority: person.seniority,  //convert string to int. I don't need to do this but incase I do it would be      seniority: parseInt(person.seniority, 10)     10 is for the base 10 number system
+            seniority: parseInt(person.seniority, 10),  //convert string to int. I don't need to do this but incase I do it would be      seniority: parseInt(person.seniority, 10)     10 is for the base 10 number system
             party: person.party
         }
     })
@@ -87,7 +87,7 @@ function senioritysortbySen() {
 
 function senioritysortbyReps() {
     displayMembers(getImpInfo(representatives).sort((a, b) => {
-        return a.seniority -b.seniority
+        return a.seniority - b.seniority
     }))
 }
 
