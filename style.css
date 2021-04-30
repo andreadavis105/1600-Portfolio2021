@@ -14,7 +14,8 @@ body {
 }
 
 h1 {
-    color: aquamarine;
+    color: white;
+    font-size: 35px;
 }
 
 a {
@@ -23,7 +24,8 @@ a {
 }
 
 #navbar {
-    background-color: #909092;
+    background: linear-gradient(#eeeeee, #A9ACB0);
+    /* background-color: #909092; */
     position: fixed;
     top: 0;
     width: 100%;
@@ -39,13 +41,14 @@ ul {
 .li-items a {
     display: block; 
     padding: 15px;
-
+    color: #E08364;
 }
 
 .li-items a:hover {
     background-color: white;
     padding: 15px;
-    color: aquamarine;
+    /* color: aquamarine; */
+    color: #0ECAC9;
 }
 
 #welcome-section {
@@ -60,18 +63,37 @@ ul {
 /* Projects Section */
 
 #projects {
-    background-color: #f0b491;
+    background-color: #eeeeee;
 }
 
 #projects-header {
     text-align: center;
     margin: 0px 0px 100px 0px;
-    padding-top: 100px;
+    padding-top: 80px;
+    color: #313131;
 }
 
 img {
     height: 350px;
     width: 350px;
+}
+
+#banner {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("Images/seashore.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#content {
+    /* DEMO - Center text inside parent */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 figure {
@@ -84,8 +106,8 @@ figure {
 }
 
 .cap {
-    background-color: rgb(124, 53, 64);
-    color: honeydew ;
+    background-color: #0ECAC9;
+    color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -96,12 +118,17 @@ figure {
 /* Contact Section */
 
 #contact {
-    background-color:  rgb(124, 53, 64);
+    /* background-color:  rgb(124, 53, 64); */
+    background: linear-gradient(#eeeeee, #A9ACB0);
 }
 
 #contact-header {
     text-align: center;
     padding: 100px 0px 100px 0px;
+}
+
+#contact-header h1 {
+    color: #E08364;
 }
 
 #contact-links {
@@ -113,6 +140,7 @@ figure {
 #profile-link {
     color: white;
     padding: 0px 10px 30px 10px;
+    font-size: 20px;
 }
 
 @media (max-width: 480px) {
@@ -122,7 +150,7 @@ figure {
     }
 }
 #footer-separation {
-    background-color: antiquewhite;
+    background-color: white;
     height: 1vh;
 }
 
@@ -130,4 +158,5 @@ footer {
     text-align: center;
     padding: 40px 0px 30px 0px;
     color: white;
+    background-color: #A9ACB0;
 }
