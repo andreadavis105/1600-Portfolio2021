@@ -31,6 +31,7 @@ a {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    z-index: 1;
 }
 
 ul {
@@ -51,13 +52,33 @@ ul {
     color: #0ECAC9;
 }
 
-#welcome-section {
+/* #welcome-section {
     background-color: rgb(124, 53, 64);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+} */
+
+#banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url("Images/seashore.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+#content {
+    /* DEMO - Center text inside parent */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    -ms-transform: translate(50%);
+    transform: translate(-50%, -50%);
 }
 
 /* Projects Section */
@@ -74,26 +95,8 @@ ul {
 }
 
 img {
-    height: 350px;
-    width: 350px;
-}
-
-#banner {
-    width: 100%;
-    height: 100vh;
-
-    background-image: url("Images/seashore.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-#content {
-    /* DEMO - Center text inside parent */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    height: 280px;
+    width: 300px;
 }
 
 figure {
