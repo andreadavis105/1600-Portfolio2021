@@ -27,14 +27,22 @@ header h1 {
     justify-content: space-around;
 }
 
+.sen-sub {
+    padding-left: 35px;
+}
+
+.rep-sub {
+    padding-left: 35px;
+}
+
 .membersGrid {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 10px;
 }
 
 .figElement {
     margin: 20px;
-    border: 1px solid black;
 }
 
 figure {
@@ -46,22 +54,22 @@ figcaption {
 }
 
 .repub {
-    border: 2px solid red;
-    background-color: rgb(225, 0, 0, 0.2);
+    border: 2px solid rgb(165, 0, 0);
+    background-color: rgb(165, 0, 0, 0.2);
     padding: 5px;
     margin: 10px;
 }
 
 .democ {
-    border: 2px solid blue;
-    background-color: rgb(0, 0, 225, 0.2);
+    border: 2px solid rgb(14, 16, 71);
+    background-color: rgb(14, 16, 71, 0.2);
     padding: 5px;
     margin: 10px;
 }
 
 .other {
-    border: 2px solid purple;
-    background-color: rgb(128, 0, 128, 0.2);
+    border: 2px solid rgb(83, 10, 83);
+    background-color: rgb(83, 10, 83, 0.2);
     padding: 5px;
     margin: 10px;
 }
@@ -71,6 +79,7 @@ button{
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    box-shadow: 1px 1px 2px gray;
 }
 
 .senior {
@@ -79,40 +88,64 @@ button{
     margin-top: 20px;
 }
 
-.senior .seniorityRep {
-    margin-left: -60px;
-    color: rgb(14, 14, 78);
+/* .senioritySen {
+    border: 1px solid black;
 }
 
-.senior .senioritySen {
-    margin-left: -45px;
-    color: rgb(14, 14, 78);
+.seniorityRep {
+    border: 1px solid black;
+} */
+
+div .sortButtons {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
 }
 
-.senButtons {
-    margin-top: 20px;
+div .senSort {
+    display: flex;   
 }
 
-.senButtons .republicansSen {
-    margin: 0px 10px 10px 185px;
-    color: red;
+div .repsSort {
+    display: flex;
 }
 
-.senButtons .democratsSen {
-    color: blue;
+.republicansSen {
+    margin-right: 5px;
+    color: rgb(165, 0, 0);
+    /* border: 1px solid rgb(165, 0, 0); */
 }
 
-.senButtons .othersSen {
-    margin: 0px 0px 10px 10px;
-    color: purple;
+.democratsSen {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(14, 16, 71);
+    /* border: 1px solid rgb(14, 16, 71); */
 }
 
-.senButtons .republicansRep {
-    margin: 0px 10px 10px 445px;
-    color: red;
+.othersSen {
+    margin-left: 5px;
+    color: rgb(83, 10, 83);
+    /* border: 1px solid rgb(83, 10, 83); */
 }
 
-.senButtons .democratsRep {
-    color: blue;
+.republicansRep {
+    margin-right: 5px;
+    color: rgb(165, 0, 0);
+    /* border: 1px solid rgb(165, 0, 0); */
 }
+
+.democratsRep {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: rgb(14, 16, 71);
+    /* border: 1px solid rgb(14, 16, 71); */
+}
+
+.othersRep {
+    margin-left: 5px;
+    color: rgb(83, 10, 83);
+    /* border: 1px solid rgb(83, 10, 83); */
+}
+
 
